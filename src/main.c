@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: halife <halife@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 03:20:09 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 05:34:29 by halife           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fractol.h"
 
 static void	ft_correct_syntax(void)
@@ -25,7 +13,7 @@ static void	ft_correct_syntax(void)
 	ft_printf("----------------------------------------------------------\n");
 }
 
-static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
+static int	ft_parse_arguments(t_fractal *fractal, int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
@@ -33,7 +21,7 @@ static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
 	{
 		ft_initialize_fractal(fractal, F_MANDELBROT);
 		if (argc > 2)
-			ft_printf("Error: Mandelbrot does not use extra parameters\n");
+			ft_printf("Note: Mandelbrot set doesn't use extra parameters\n");
 	}
 	else if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
@@ -45,8 +33,8 @@ static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
 				ft_printf("Error: Invalid parameters for Julia set\n");
 				return (0);
 			}
-			fractal->constant.r_num = ft_atod(argv[2]);
 			fractal->constant.i_num = ft_atod(argv[3]);
+			fractal->constant.r_num = ft_atod(argv[2]);
 		}
 	}
 	else
@@ -54,20 +42,34 @@ static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
 	return (1);
 }
 
+static void ft_initialize_mlx(t_fractal *fractal)
+{
+	ft_setup_window(fractal);
+	ft_setup_canvas(fractal);
+	ft_view_reset(fractal);
+}
+
 int	main(int argc, char **argv)
 {
 	t_fractal	fractal;
 
-	ft_memset(&fractal, 0, sizeof(t_fractal));
-	if (!ft_parse_argument(argc, argv, &fractal))
+	if(argc == 2 || argc == 4)
 	{
-		ft_correct_syntax();
-		return (1);
+		ft_memset(&fractal, 0, sizeof(t_fractal));
+		if (!ft_parse_arguments(&fractal, argc, argv))
+		{
+			ft_correct_syntax();
+			return (1);
+		}
+		ft_initialize_mlx(&fractal);
+		ft_render_fractal(&fractal);
+		mlx_key_hook(fractal.window, ft_action_key, &fractal);
+		mlx_mouse_hook(fractal.window, ft_action_mouse, &fractal);
+		mlx_hook(fractal.window, 17, 0, ft_close_program, &fractal);
+		mlx_loop(fractal.mlx);
+		return (0);
 	}
-	ft_render_fractal(&fractal);
-	mlx_key_hook(fractal.window, ft_key_action, &fractal);
-	mlx_mouse_hook(fractal.window, ft_mouse_action, &fractal);
-	mlx_hook(fractal.window, 17, 0, ft_close_program, &fractal);
-	mlx_loop(fractal.mlx);
-	return (0);
+	else
+		ft_correct_syntax();
 }
+

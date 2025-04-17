@@ -87,3 +87,4 @@ int	ft_u_printer(unsigned int nb)
 	len += ft_putchar((nb % 10) + '0');
 	return (len);
 }
+

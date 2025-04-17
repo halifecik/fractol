@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:20:02 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 04:00:42 by hademirc         ###   ########.fr       */
+/*   Updated: 2024/12/24 17:30:05 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@ int	ft_flag_check(char c, va_list a)
 	else if (c == 's')
 		return (ft_putstr(va_arg(a, char *)));
 	else if (c == 'p')
-		return (ft_px_printer(va_arg(a, unsigned long), "0123456789abcdef", 1));
+		return (ft_px_printer(va_arg(a, unsigned long),
+				"0123456789abcdef", 1));
 	else if (c == 'd' || c == 'i')
 		return (ft_id_printer(va_arg(a, int)));
 	else if (c == 'u')
 		return (ft_u_printer(va_arg(a, unsigned int)));
 	else if (c == 'x')
-		return (ft_px_printer(va_arg(a, unsigned int), "0123456789abcdef", 0));
+		return (ft_px_printer(va_arg(a, unsigned int),
+				"0123456789abcdef", 0));
 	else if (c == 'X')
-		return (ft_px_printer(va_arg(a, unsigned int), "0123456789ABCDEF", 0));
+		return (ft_px_printer(va_arg(a, unsigned int),
+				"0123456789ABCDEF", 0));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else
@@ -63,3 +66,4 @@ int	ft_printf(const char *str, ...)
 	va_end(a);
 	return (len);
 }
+
