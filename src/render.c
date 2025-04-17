@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 03:20:11 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 04:21:20 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_place_pixel(t_pixel *pixel, int x, int y, int color)
 {
 	char	*pxl;
 
-	if (x >= 0 && y>= 0 && x < WIDTH && y < HEIGHT)
+	if (x >= 0 && y >= 0 && x < WIDTH && y < HEIGHT)
 	{
 		pxl = pixel->address + (y * pixel->line + x * (pixel->bits_pp / 8));
 		*(unsigned int *)pxl = color;

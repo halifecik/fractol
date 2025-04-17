@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   actions.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 03:20:01 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 04:06:30 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_switch_fractal(t_fractal *pattern)
@@ -14,9 +26,9 @@ void	ft_switch_fractal(t_fractal *pattern)
 int	ft_mouse_action(int button, int x, int y, t_fractal *pattern)
 {
 	if (button == UP_SCROLL)
-		ft_view_zoom(pattern, x, y, 1.15);
+		ft_view_zoom(pattern, x, y, 1.2);
 	else if (button == DOWN_SCROLL)
-		ft_view_zoom(pattern, x, y, 0.85);
+		ft_view_zoom(pattern, x, y, 0.75);
 	return (0);
 }
 

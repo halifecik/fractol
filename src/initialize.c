@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 03:20:07 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 04:21:02 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void	ft_error_exit(char *message)
@@ -13,7 +25,7 @@ void	ft_view_reset(t_fractal *fractal)
 	fractal->y_offset = 0.0;
 	if (fractal->type == F_MANDELBROT)
 		fractal->x_offset = -0.5;
-	render_fractal(fractal);
+	ft_render_fractal(fractal);
 }
 
 void	ft_window_setup(t_fractal *fractal)
@@ -39,14 +51,13 @@ void	ft_canvas_setup(t_fractal *fractal)
 void	ft_initialize_fractal(t_fractal *fractal, int type)
 {
 	fractal->type = type;
-	fractal->max = ITERATION_MAX;
 	fractal->zoom = 1.0;
 	fractal->x_offset = 0.0;
 	fractal->y_offset = 0.0;
 	if (type == F_JULIA)
 	{
-		fractal->constant.r_num = -0.7;
-		fractal->constant.i_num = 0.27015;
+		fractal->constant.r_num = -0.705;
+		fractal->constant.i_num = 0.27023;
 	}
 	ft_window_setup(fractal);
 	ft_canvas_setup(fractal);

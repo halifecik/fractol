@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 03:20:09 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 04:00:32 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void	ft_correct_syntax(void)
@@ -8,8 +20,9 @@ static void	ft_correct_syntax(void)
 	ft_printf("  julia      --- Julia Set\n\n");
 	ft_printf("Examples:\n");
 	ft_printf("  ./fractol mandelbrot\n");
-	ft_printf("  ./fractol julia [real] [imaginary]\n");
-    ft_printf("----------------------------------------------------------\n\n");
+	ft_printf("  ./fractol julia -0.705 0.27023\n");
+	ft_printf("  ./fractol julia (optional) [real] [imaginary]\n\n");
+	ft_printf("----------------------------------------------------------\n");
 }
 
 static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
@@ -51,7 +64,7 @@ int	main(int argc, char **argv)
 		ft_correct_syntax();
 		return (1);
 	}
-	render_fractal(&fractal);
+	ft_render_fractal(&fractal);
 	mlx_key_hook(fractal.window, ft_key_action, &fractal);
 	mlx_mouse_hook(fractal.window, ft_mouse_action, &fractal);
 	mlx_hook(fractal.window, 17, 0, ft_close_program, &fractal);

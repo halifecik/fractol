@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utilities.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 03:20:12 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 04:00:28 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 static int	ft_check_before(char *str, int *i, int *before_dot)
 {
 	if (str[*i] == 43 || str[*i] == 45)
@@ -90,7 +102,7 @@ double	ft_atod(const char *str)
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
-        result = result * 10.0 + (str[i++] - 48);
+		result = result * 10.0 + (str[i++] - 48);
 	decimal = ft_parse_decimal(str, &i);
 	return (sign * (result + decimal));
 }
