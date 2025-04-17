@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:09 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 15:34:10 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:19:07 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,16 @@ static int	ft_parse_arguments(t_fractal *fractal, int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
-	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0)
-	{
+	if (!ft_strncmp(argv[1], "mandelbrot", 11))
 		ft_initialize_fractal(fractal, F_MANDELBROT);
-		if (argc > 2)
-			ft_printf("Note: Mandelbrot set doesn't use extra parameters\n");
-	}
-	else if (ft_strncmp(argv[1], "julia", 6) == 0)
+	else if (!ft_strncmp(argv[1], "julia", 6))
 	{
 		ft_initialize_fractal(fractal, F_JULIA);
 		if (argc >= 4)
 		{
 			if (!ft_is_number(argv[2]) || !ft_is_number(argv[3]))
 			{
-				ft_printf("Error: Invalid parameters for Julia set\n");
+				ft_printf("ERROR: Invalid arguments for Julia set!\n");
 				return (0);
 			}
 			fractal->constant.i_num = ft_atod(argv[3]);
@@ -65,7 +61,8 @@ int	main(int argc, char **argv)
 {
 	t_fractal	fractal;
 
-	if (argc == 2 || argc == 4)
+	if ((argc == 2 || argc == 4) && !(argc == 4 && !ft_strncmp(argv[1],
+				"mandelbrot", 11)))
 	{
 		ft_memset(&fractal, 0, sizeof(t_fractal));
 		if (!ft_parse_arguments(&fractal, argc, argv))

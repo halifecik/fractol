@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:00 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 15:34:01 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:50:55 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define HEIGHT 1000
 # define WIDTH 1000
-# define ITERATION_MAX 50
+# define ITERATION_MAX 49
 
 # define F_JULIA 1
 # define F_MANDELBROT 0
