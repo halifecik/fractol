@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:09 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 17:19:07 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:23:54 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ static void	ft_correct_syntax(void)
 
 static int	ft_parse_arguments(t_fractal *fractal, int argc, char **argv)
 {
-	if (argc < 2)
-		return (0);
 	if (!ft_strncmp(argv[1], "mandelbrot", 11))
 		ft_initialize_fractal(fractal, F_MANDELBROT);
 	else if (!ft_strncmp(argv[1], "julia", 6))
 	{
 		ft_initialize_fractal(fractal, F_JULIA);
-		if (argc >= 4)
+		if (argc == 4)
 		{
 			if (!ft_is_number(argv[2]) || !ft_is_number(argv[3]))
 			{
