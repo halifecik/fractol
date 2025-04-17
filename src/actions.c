@@ -14,9 +14,9 @@ int	ft_action_key(int key, t_fractal *fractal)
 int	ft_action_mouse(int button, int x, int y, t_fractal *fractal)
 {
 	if (button == UP_SCROLL)
-		ft_view_zoom(fractal, x, y, 1.1);
+		ft_view_zoom(fractal, x, y, 1.15);
 	else if (button == DOWN_SCROLL)
-		ft_view_zoom(fractal, x, y, 0.9);
+		ft_view_zoom(fractal, x, y, 0.85);
 	return (0);
 }
 
@@ -25,8 +25,8 @@ void	ft_switch_pattern(t_fractal *fractal)
 	fractal->type = (fractal->type + 1) % 2;
 	if (fractal->type == F_JULIA)
 	{
-		fractal->constant.r_num = -0.7;
-		fractal->constant.i_num = 0.27015;
+		fractal->constant.r_num = -0.705;
+		fractal->constant.i_num = 0.27023;
 	}
 	ft_view_reset(fractal);
 }

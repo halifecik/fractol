@@ -7,8 +7,8 @@ int	ft_mandelbrot(double real, double imag)
 	t_complex	z;
 	t_complex	c;
 
-	z.r_num = 0.0;
 	z.i_num = 0.0;
+	z.r_num = 0.0;
 	c.r_num = real;
 	c.i_num = imag;
 	i = 0;
@@ -30,8 +30,8 @@ int	ft_julia(double real, double imag, t_complex c)
 	int			i;
 	t_complex	z;
 
-	z.r_num = real;
 	z.i_num = imag;
+	z.r_num = real;
 	i = 0;
 	while (i < ITERATION_MAX)
 	{

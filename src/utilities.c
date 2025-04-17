@@ -38,22 +38,6 @@ static int	ft_check_after(char *str, int *i)
 	return (after_dot || str[*i - 1] != '.');
 }
 
-int	ft_is_number(char *str)
-{
-	int	i;
-	int	before_dot;
-
-	i = 0;
-	before_dot = 0;
-	if (!ft_check_before(str, &i, &before_dot))
-		return (0);
-	if (str[i] == '.' && !before_dot)
-		return (0);
-	if (str[i] == '.' && !ft_check_after(str, &i))
-		return (0);
-	return (before_dot || str[i - 1] != '.');
-}
-
 static double	ft_decimal_parse(const char *str, int *i)
 {
 	double	decimal;
@@ -72,6 +56,22 @@ static double	ft_decimal_parse(const char *str, int *i)
 		}
 	}
 	return (decimal);
+}
+
+int	ft_is_number(char *str)
+{
+	int	i;
+	int	before_dot;
+
+	i = 0;
+	before_dot = 0;
+	if (!ft_check_before(str, &i, &before_dot))
+		return (0);
+	if (str[i] == '.' && !before_dot)
+		return (0);
+	if (str[i] == '.' && !ft_check_after(str, &i))
+		return (0);
+	return (before_dot || str[i - 1] != '.');
 }
 
 double	ft_atod(const char *str)

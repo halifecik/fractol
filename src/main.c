@@ -72,4 +72,3 @@ int	main(int argc, char **argv)
 	else
 		ft_correct_syntax();
 }
-
