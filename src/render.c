@@ -6,13 +6,13 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:12 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 16:21:19 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:50:48 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	ft_place_pixel(t_pixel *pixel, int x, int y, int color)
+void	ft_calculate_pixel(t_pixel *pixel, int x, int y, int color)
 {
 	char	*pxl;
 
@@ -50,7 +50,7 @@ void	ft_render_fractal(t_fractal *fract)
 				i = ft_mandelbrot(position.r_num, position.i_num);
 			else
 				i = ft_julia(position.r_num, position.i_num, fract->constant);
-			ft_place_pixel(&fract->canvas, x, y, ft_color_rgb(i));
+			ft_calculate_pixel(&fract->canvas, x, y, ft_color_rgb(i));
 			x++;
 		}
 		y++;

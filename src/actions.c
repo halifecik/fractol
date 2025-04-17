@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:33:44 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 15:33:45 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:53:50 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	ft_action_key(int key, t_fractal *fractal)
 int	ft_action_mouse(int button, int x, int y, t_fractal *fractal)
 {
 	if (button == UP_SCROLL)
-		ft_view_zoom(fractal, x, y, 1.15);
+		ft_view_zoom(fractal, x, y, 1.20);
 	else if (button == DOWN_SCROLL)
-		ft_view_zoom(fractal, x, y, 0.85);
+		ft_view_zoom(fractal, x, y, 0.80);
 	return (0);
 }
 

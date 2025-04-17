@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:00 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 15:50:55 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:51:14 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void			ft_setup_canvas(t_fractal *fractal);
 void			ft_initialize_fractal(t_fractal *fractal, int type);
 void			ft_view_reset(t_fractal *fractal);
 
-void			ft_place_pixel(t_pixel *pixel, int x, int y, int color);
+void			ft_calculate_pixel(t_pixel *pixel, int x, int y, int color);
 void			ft_complex_coordinates(t_fractal *fract, int x, int y,
 					t_complex *position);
 void			ft_render_fractal(t_fractal *fract);
