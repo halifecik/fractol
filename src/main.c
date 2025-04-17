@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 15:34:09 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 15:34:10 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void	ft_correct_syntax(void)
@@ -42,7 +54,7 @@ static int	ft_parse_arguments(t_fractal *fractal, int argc, char **argv)
 	return (1);
 }
 
-static void ft_initialize_mlx(t_fractal *fractal)
+static void	ft_initialize_mlx(t_fractal *fractal)
 {
 	ft_setup_window(fractal);
 	ft_setup_canvas(fractal);
@@ -53,7 +65,7 @@ int	main(int argc, char **argv)
 {
 	t_fractal	fractal;
 
-	if(argc == 2 || argc == 4)
+	if (argc == 2 || argc == 4)
 	{
 		ft_memset(&fractal, 0, sizeof(t_fractal));
 		if (!ft_parse_arguments(&fractal, argc, argv))

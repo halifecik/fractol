@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 15:34:12 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 15:34:13 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_place_pixel(t_pixel *pixel, int x, int y, int color)
@@ -11,7 +23,8 @@ void	ft_place_pixel(t_pixel *pixel, int x, int y, int color)
 	}
 }
 
-void	ft_complex_coordinates(t_fractal *fract, int x, int y, t_complex *position)
+void	ft_complex_coordinates(t_fractal *fract, int x, int y,
+		t_complex *position)
 {
 	position->r_num = (4.0 * ((double)x / WIDTH - 0.5)) * fract->zoom
 		+ fract->x_offset;
@@ -42,6 +55,6 @@ void	ft_render_fractal(t_fractal *fract)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(fract->mlx, fract->window, fract->canvas.image, 0, 0);
+	mlx_put_image_to_window(fract->mlx, fract->window, fract->canvas.image, 0,
+		0);
 }
-

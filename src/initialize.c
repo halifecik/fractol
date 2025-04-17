@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 15:34:04 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 15:34:05 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	ft_error_exit(char *message)
@@ -48,4 +60,3 @@ void	ft_view_reset(t_fractal *fractal)
 		fractal->x_offset = -0.5;
 	ft_render_fractal(fractal);
 }
-

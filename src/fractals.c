@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractals.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 15:33:56 by hademirc          #+#    #+#             */
+/*   Updated: 2025/04/17 15:33:57 by hademirc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	ft_mandelbrot(double real, double imag)
@@ -26,7 +38,7 @@ int	ft_mandelbrot(double real, double imag)
 
 int	ft_julia(double real, double imag, t_complex c)
 {
-    double		tmp;
+	double		tmp;
 	int			i;
 	t_complex	z;
 
