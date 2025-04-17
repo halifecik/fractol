@@ -6,7 +6,7 @@
 /*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:34:00 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 18:59:42 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 19:16:21 by hademirc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 # include "../minilibx-linux/mlx.h"
 # include "../utils/utils.h"
-# include <math.h>
 # include <stdlib.h>
-# include <unistd.h>
 
 # define HEIGHT 1000
 # define WIDTH 1000
