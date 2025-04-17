@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: halife <halife@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 03:20:06 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 04:05:31 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 05:35:55 by halife           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int				ft_color_rgb(int n);
 int				ft_mandelbrot(double real, double imag);
 int				ft_julia(double real, double imag, t_complex c);
 
+void	ft_error_exit(char *message);
 void			ft_view_reset(t_fractal *fractal);
 void			ft_window_setup(t_fractal *fractal);
 void			ft_canvas_setup(t_fractal *fractal);

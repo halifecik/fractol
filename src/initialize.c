@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: halife <halife@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 03:20:07 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 04:21:02 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 05:35:45 by halife           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	ft_error_exit(char *message)
+void	ft_error_exit(char *message)
 {
 	ft_printf("Error: %s\n", message);
 	exit(1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: halife <halife@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 03:20:04 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 04:20:41 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 05:31:34 by halife           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_mandelbrot(double real, double imag)
 {
-	double		tmp;
 	int			i;
 	t_complex	z;
 	t_complex	c;
+	double		tmp;
 
 	z.r_num = 0.0;
 	z.i_num = 0.0;
@@ -38,9 +38,9 @@ int	ft_mandelbrot(double real, double imag)
 
 int	ft_julia(double real, double imag, t_complex c)
 {
+	int			i;
 	t_complex	z;
 	double		tmp;
-	int			i;
 
 	z.r_num = real;
 	z.i_num = imag;

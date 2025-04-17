@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hademirc <hademirc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: halife <halife@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 03:20:09 by hademirc          #+#    #+#             */
-/*   Updated: 2025/04/17 04:00:32 by hademirc         ###   ########.fr       */
+/*   Updated: 2025/04/17 05:34:29 by halife           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ static int	ft_parse_argument(int argc, char **argv, t_fractal *fractal)
 {
 	if (argc < 2)
 		return (0);
-	if (!ft_strncmp(argv[1], "mandelbrot", 11))
+	if (ft_strncmp(argv[1], "mandelbrot", 11) == 0)
 	{
 		ft_initialize_fractal(fractal, F_MANDELBROT);
 		if (argc > 2)
 			ft_printf("Error: Mandelbrot does not use extra parameters\n");
 	}
-	else if (!ft_strncmp(argv[1], "julia", 6))
+	else if (ft_strncmp(argv[1], "julia", 6) == 0)
 	{
 		ft_initialize_fractal(fractal, F_JULIA);
 		if (argc >= 4)
